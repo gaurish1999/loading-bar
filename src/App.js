@@ -10,7 +10,11 @@ function setNum(){
     document.querySelector('.progress .progress-bar').setAttribute('style', 'width: ' + y)  
 
   }
-  else alert("Oh please")
+  // This case not working
+  else if(x === " "){
+    alert("Can't be vacant");
+  }
+  else alert("Invalid");
 }
 
 function App() {
@@ -21,14 +25,23 @@ function App() {
 
       <div className="progress" style={{height: '40px'}}>
         <div className="progress-bar" 
-        style={{width: '55%'}} 
-        value='30'
-        >55%</div>
+        style={{width: '55%'}}
+        >
+          55%
+        </div>
       </div>
 
-      <br/>
+      <hr/>
 
-      <input type='number' id='input' className='form-control' placeholder='Enter the percentage'></input><br/>
+      <input 
+      type='number' 
+      id='input' 
+      className='form-control' 
+      placeholder='Enter the percentage'
+      ></input>
+      
+      <br/>
+      
       <button className='btn btn-dark w-75'
       onClick={setNum}
       >Enter</button>
